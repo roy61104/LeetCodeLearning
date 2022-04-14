@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Solution {
 
@@ -80,5 +82,14 @@ public class Solution {
             }
         }
         System.arraycopy(newNums, 0, nums, 0, nums.length);
+    }
+
+    // 存在重复元素
+    public static boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<Integer>();
+        for (int num : nums) {
+            set.add(num);
+        }
+        return set.size() != nums.length;
     }
 }
